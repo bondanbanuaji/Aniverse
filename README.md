@@ -62,4 +62,4 @@ Aplikasi ini diimplementasikan sebagai bagian dari pembelajaran materi:
 - RecyclerView & Adapters
 
 ---
-Developed with ❤️ by boba.
+Developed with susukntlmanis group.
