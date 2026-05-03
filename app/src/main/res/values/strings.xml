@@ -1,3 +1,45 @@
 <resources>
     <string name="app_name">Aniverse</string>
+    <string name="ratings">%1$s Ratings</string>
+    <string name="favorites_count">%1$s Favorites</string>
+    <string name="rank_label">Rank #%1$s</string>
+    <string name="popularity_label">Popularity #%1$s</string>
+    <string name="no_synopsis">No Synopsis</string>
+    <string name="label_synopsis">Synopsis</string>
+    <string name="label_trailer">Trailer</string>
+    <string name="label_information">Information</string>
+    <string name="label_studios">Studio &amp; Producers</string>
+    <string name="label_genres">Genre</string>
+    <string name="label_casters">Voice Actors &amp; Staff</string>
+    <string name="status_format">Status: %1$s</string>
+    <string name="episodes_format">Episodes: %1$s</string>
+    <string name="duration_format">Duration: %1$s</string>
+    <string name="rating_format">Rating: %1$s</string>
+    <string name="season_format">Season: %1$s %2$s</string>
+    <string name="source_format">Source: %1$s</string>
+    <string name="broadcast_format">Broadcast: %1$s</string>
+    <string name="add_to_watchlist">Add to Watchlist</string>
+    <string name="in_watchlist">In Watchlist</string>
+    <string name="msg_added_favorite">Added to Watchlist!</string>
+    <string name="msg_removed_favorite">Removed from Watchlist</string>
+
+    <!-- Sidebar / Nav Strings -->
+    <string name="menu_home">Home</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_favorite">Watchlist</string>
+    <string name="menu_about">About</string>
+    <string name="tab_top_anime">Top Anime</string>
+    <string name="tab_seasonal">Seasonal</string>
+    <string name="label_empty_favorite">You don\'t have any favorite anime yet.</string>
+    <string name="select_language">Select Language</string>
+    <string name="welcome_title">Welcome to\nAnimeVerse</string>
+    <string name="welcome_subtitle">Discover your next favorite anime!</string>
+    <string name="btn_browse">Browse Anime</string>
+    <string name="btn_schedule">Schedule</string>
+    <string name="label_trending">Trending Now</string>
+    <string name="label_see_all">See All</string>
+    <string name="about_subtitle">Made for Mobile Programming Midterm Exam</string>
+    <string name="powered_by">Powered by Jikan API</string>
+    <string name="hint_search">Search anime...</string>
+    <string name="msg_empty_search">Data Kosong</string>
 </resources>

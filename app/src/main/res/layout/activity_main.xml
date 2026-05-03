@@ -1,62 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background">
 
-    <!-- Konten Utama -->
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <!-- AppBar / Toolbar (materi latappbar) -->
+        <!-- Professional Toolbar -->
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            app:elevation="0dp"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/primary"
-                app:title="Aniverse"
-                app:titleTextColor="@color/accent" />
+                app:contentInsetStart="0dp">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="16dp">
+
+                    <!-- AV Logo -->
+                    <TextView
+                        android:id="@+id/tvLogoPrefix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AV"
+                        android:textColor="@color/white"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="-0.05"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/logoDivider"
+                        android:layout_width="2dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@color/accent"
+                        app:layout_constraintBottom_toBottomOf="@id/tvLogoPrefix"
+                        app:layout_constraintStart_toEndOf="@id/tvLogoPrefix"
+                        app:layout_constraintTop_toTopOf="@id/tvLogoPrefix" />
+
+                    <TextView
+                        android:id="@+id/tvLogoText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="ANIMEVERSE"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1"
+                        app:layout_constraintBottom_toBottomOf="@id/tvLogoPrefix"
+                        app:layout_constraintStart_toEndOf="@id/logoDivider"
+                        app:layout_constraintTop_toTopOf="@id/tvLogoPrefix" />
+
+                    <!-- Action Icons -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/ivLanguage"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginEnd="18dp"
+                            android:src="@android:drawable/ic_menu_mapmode"
+                            android:contentDescription="Language"
+                            app:tint="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/ivSearchIcon"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginEnd="18dp"
+                            android:src="@android:drawable/ic_menu_search"
+                            android:contentDescription="Search"
+                            app:tint="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/ivMenuIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@android:drawable/ic_menu_sort_by_size"
+                            android:contentDescription="Menu"
+                            app:tint="@color/white" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <!-- Fragment Container (materi latfragment + latnavigation) -->
+        <!-- Nav Host Fragment (Filled Screen) -->
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/navHostFragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
             app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appBarLayout"
             app:navGraph="@navigation/nav_graph" />
 
-        <!-- Bottom Navigation (materi latbottomnavigation) -->
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNav"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/primary_variant"
-            app:itemIconTint="@color/accent"
-            app:itemTextColor="@color/on_primary"
-            app:menu="@menu/bottom_nav_menu" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
-
-    <!-- Navigation Drawer (materi latnavdrawer) -->
+    <!-- Navigation Drawer (Sidebar on the Right) -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@color/primary_variant"
+        android:layout_gravity="end"
+        android:background="@color/background"
         app:headerLayout="@layout/nav_header"
+        app:itemIconTint="@color/accent"
+        app:itemTextColor="@color/white"
         app:menu="@menu/nav_drawer_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

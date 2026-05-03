@@ -5,21 +5,23 @@
     android:background="@color/surface"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="24dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ANIVERSE"
-        android:textColor="@color/accent"
-        android:textSize="24sp"
+        android:text="AV"
+        android:textColor="@color/white"
+        android:textSize="40sp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Anime Universe"
-        android:textColor="@color/on_primary"
-        android:textSize="12sp" />
+        android:text="ANIMEVERSE"
+        android:textColor="@color/accent"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.2" />
 
 </LinearLayout>

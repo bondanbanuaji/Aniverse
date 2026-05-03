@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Aniverse</string>
+    <string name="ratings">%1$s Rating</string>
+    <string name="favorites_count">%1$s Favorit</string>
+    <string name="rank_label">Peringkat #%1$s</string>
+    <string name="popularity_label">Popularitas #%1$s</string>
+    <string name="no_synopsis">Tidak ada Sinopsis</string>
+    <string name="label_synopsis">Sinopsis</string>
+    <string name="label_trailer">Trailer</string>
+    <string name="label_information">Informasi</string>
+    <string name="label_studios">Studio &amp; Produser</string>
+    <string name="label_genres">Genre</string>
+    <string name="label_casters">Pengisi Suara &amp; Staf</string>
+    <string name="status_format">Status: %1$s</string>
+    <string name="episodes_format">Episode: %1$s</string>
+    <string name="duration_format">Durasi: %1$s</string>
+    <string name="rating_format">Rating: %1$s</string>
+    <string name="season_format">Musim: %1$s %2$s</string>
+    <string name="source_format">Sumber: %1$s</string>
+    <string name="broadcast_format">Siaran: %1$s</string>
+    <string name="add_to_watchlist">Tambahkan ke Watchlist</string>
+    <string name="in_watchlist">Di Watchlist</string>
+    <string name="msg_added_favorite">Berhasil ditambah ke Watchlist!</string>
+    <string name="msg_removed_favorite">Dihapus dari Watchlist</string>
+
+    <!-- Sidebar / Nav Strings -->
+    <string name="menu_home">Beranda</string>
+    <string name="menu_search">Cari</string>
+    <string name="menu_favorite">Watchlist</string>
+    <string name="menu_about">Tentang</string>
+    <string name="tab_top_anime">Anime Terpopuler</string>
+    <string name="tab_seasonal">Musiman</string>
+    <string name="label_empty_favorite">Kamu belum memiliki anime favorit.</string>
+    <string name="select_language">Pilih Bahasa</string>
+    <string name="welcome_title">Selamat Datang di\nAnimeVerse</string>
+    <string name="welcome_subtitle">Temukan anime favoritmu berikutnya!</string>
+    <string name="btn_browse">Jelajahi Anime</string>
+    <string name="btn_schedule">Jadwal</string>
+    <string name="label_trending">Sedang Tren</string>
+    <string name="label_see_all">Lihat Semua</string>
+    <string name="about_subtitle">Dibuat untuk UTS Pemrograman Mobile</string>
+    <string name="powered_by">Didukung oleh Jikan API</string>
+    <string name="hint_search">Cari anime...</string>
+    <string name="msg_empty_search">Data Kosong</string>
+</resources>

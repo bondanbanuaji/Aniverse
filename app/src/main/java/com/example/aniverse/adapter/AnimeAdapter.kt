@@ -22,6 +22,7 @@ class AnimeAdapter(
     private val items = mutableListOf<AnimeItem>()
 
     fun submitList(newItems: List<AnimeItem>) {
+        android.util.Log.d("AnimeAdapter", "Submitting list with ${newItems.size} items")
         items.clear()
         items.addAll(newItems)
         notifyDataSetChanged()
@@ -45,7 +46,7 @@ class AnimeAdapter(
 
         fun bind(item: AnimeItem) {
             binding.tvTitle.text = item.title
-            binding.tvScore.text = "⭐ ${item.score}"
+            binding.tvScore.text = item.score.toString()
 
             Glide.with(binding.root.context)
                 .load(item.imageUrl)

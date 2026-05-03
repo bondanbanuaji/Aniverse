@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Dibuat untuk UTS Mobile Programming"
+        android:text="@string/about_subtitle"
         android:textColor="@color/on_primary"
         android:textSize="14sp" />
 
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Powered by Jikan API"
+        android:text="@string/powered_by"
         android:textColor="@color/text_secondary"
         android:textSize="12sp" />
 
