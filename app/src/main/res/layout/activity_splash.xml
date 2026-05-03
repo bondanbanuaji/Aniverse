@@ -16,17 +16,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:cardCornerRadius="60dp"
-            app:cardElevation="8dp"
-            app:strokeWidth="2dp"
-            app:strokeColor="@color/accent">
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="12dp"
+            app:strokeWidth="3dp"
+            app:strokeColor="@color/accent"
+            app:cardBackgroundColor="@color/primary">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="20dp"
+                android:padding="0dp"
+                android:scaleType="centerCrop"
                 android:src="@mipmap/ic_launcher" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -36,9 +38,13 @@
             android:layout_marginTop="24dp"
             android:letterSpacing="0.2"
             android:text="ANIMEVERSE"
-            android:textColor="@color/on_primary"
-            android:textSize="36sp"
-            android:textStyle="bold" />
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:shadowColor="#B026FF"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="20" />
 
         <TextView
             android:layout_width="wrap_content"

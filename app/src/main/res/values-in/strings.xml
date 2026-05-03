@@ -28,8 +28,10 @@
     <string name="menu_search">Cari</string>
     <string name="menu_favorite">Watchlist</string>
     <string name="menu_about">Tentang</string>
-    <string name="tab_top_anime">Anime Terpopuler</string>
-    <string name="tab_seasonal">Musiman</string>
+    <string name="tab_top_anime">Paling Populer</string>
+    <string name="tab_seasonal">Sedang Tayang</string>
+    <string name="tab_upcoming">Segera Tayang</string>
+    <string name="tab_popular">Sedang Tren</string>
     <string name="label_empty_favorite">Kamu belum memiliki anime favorit.</string>
     <string name="select_language">Pilih Bahasa</string>
     <string name="welcome_title">Selamat Datang di\nAnimeVerse</string>
@@ -38,7 +40,10 @@
     <string name="btn_schedule">Jadwal</string>
     <string name="label_trending">Sedang Tren</string>
     <string name="label_see_all">Lihat Semua</string>
-    <string name="about_subtitle">Dibuat untuk UTS Pemrograman Mobile</string>
+    <string name="about_description">Aplikasi ini dibuat untuk memenuhi tugas Ujian Tengah Semester (UTS) di STT Wastukancana pada mata kuliah Mobile Programming 2.</string>
+    <string name="developer_title">Dikembangkan oleh:</string>
+    <string name="developer_group">Kelompok Kuda Lumping (KKL)</string>
+    <string name="developer_list">1. Bondan Banuaji (231351030)\n2. Faiz Indriaswara (231351049)\n3. Dendi Gunawan (231351041)</string>
     <string name="powered_by">Didukung oleh Jikan API</string>
     <string name="hint_search">Cari anime...</string>
     <string name="msg_empty_search">Data Kosong</string>

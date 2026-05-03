@@ -31,14 +31,20 @@ class CasterAdapter : RecyclerView.Adapter<CasterAdapter.CasterViewHolder>() {
 
     class CasterViewHolder(private val binding: ItemCasterBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: CharacterData) {
-            binding.tvCasterName.text = data.character.name
-            binding.tvCasterRole.text = data.role
+            // Get Japanese Voice Actor if available
+            val voiceActor = data.voiceActors?.find { it.language == "Japanese" }
+                ?: data.voiceActors?.firstOrNull()
+
+            binding.tvCasterName.text = voiceActor?.person?.name ?: "Unknown"
+            binding.tvCasterRole.text = data.character.name
             
-            val imageUrl = data.character.images?.jpg?.imageUrl
+            val imageUrl = voiceActor?.person?.images?.jpg?.imageUrl 
+                ?: data.character.images?.jpg?.imageUrl
             
             Glide.with(binding.root.context)
                 .load(imageUrl)
                 .placeholder(android.R.drawable.ic_menu_gallery)
+                .circleCrop()
                 .into(binding.imgCaster)
         }
     }

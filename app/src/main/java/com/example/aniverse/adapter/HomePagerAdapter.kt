@@ -11,8 +11,10 @@ class HomePagerAdapter(fragment: Fragment, private val tabCount: Int)
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> AnimeListFragment.newInstance("top")
-            1 -> AnimeListFragment.newInstance("seasonal")
+            0 -> AnimeListFragment.newInstance("popular")
+            1 -> AnimeListFragment.newInstance("top")
+            2 -> AnimeListFragment.newInstance("seasonal")
+            3 -> AnimeListFragment.newInstance("upcoming")
             else -> AnimeListFragment.newInstance("top")
         }
     }

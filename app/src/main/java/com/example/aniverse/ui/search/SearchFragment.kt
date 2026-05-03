@@ -21,6 +21,9 @@ import com.example.aniverse.data.local.AnimeDatabase
 import com.example.aniverse.data.repository.AnimeRepository
 import com.example.aniverse.util.Resource
 
+import com.example.aniverse.data.model.GenreDetail
+import com.google.android.material.chip.Chip
+
 class SearchFragment : Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
@@ -39,26 +42,21 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Inisialisasi ViewModel (Backend lo)
         setupViewModel()
-
-        // Inisialisasi Adapter sesuai kontrak Anggota 1
         setupRecyclerView()
 
-        // Trigger search saat user tekan tombol search di keyboard
         binding.etSearch.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 val query = binding.etSearch.text.toString().trim()
                 if (query.isNotEmpty()) {
-                    // Panggil fungsi search di ViewModel lo
                     viewModel.searchAnime(query)
                 }
                 true
             } else false
         }
 
-        // Observe hasil pencarian dari API Jikan
         observeSearchResult()
+        observeGenres()
     }
 
     private fun setupViewModel() {
@@ -71,13 +69,11 @@ class SearchFragment : Fragment() {
 
     private fun setupRecyclerView() {
         adapter = AnimeAdapter { anime ->
-            // Navigasi ke DetailActivity dengan ID yang benar
             val intent = Intent(requireContext(), DetailActivity::class.java)
             intent.putExtra("ANIME_ID", anime.malId)
             startActivity(intent)
         }
 
-        // Gunakan ID recyclerSearch dari layout xml[cite: 4]
         binding.recyclerSearch.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerSearch.adapter = adapter
     }
@@ -86,13 +82,12 @@ class SearchFragment : Fragment() {
         viewModel.searchResult.observe(viewLifecycleOwner) { resource ->
             when (resource) {
                 is Resource.Loading -> {
-                    // Bisa tambahkan progressBar visibility jika diperlukan
+                    // Show loading if needed
                 }
                 is Resource.Success -> {
-                    // Masukkan data ke adapter Anggota 1[cite: 1]
                     val data = resource.data ?: emptyList()
                     adapter.submitList(data)
-                    if (data.isEmpty()) {
+                    if (data.isEmpty() && binding.etSearch.text?.isNotEmpty() == true) {
                         Toast.makeText(requireContext(), getString(R.string.msg_empty_search), Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -100,6 +95,32 @@ class SearchFragment : Fragment() {
                     Toast.makeText(requireContext(), resource.message, Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+    }
+
+    private fun observeGenres() {
+        viewModel.genres.observe(viewLifecycleOwner) { resource ->
+            if (resource is Resource.Success) {
+                populateGenreChips(resource.data ?: emptyList())
+            }
+        }
+    }
+
+    private fun populateGenreChips(genres: List<GenreDetail>) {
+        binding.chipGroupGenres.removeAllViews()
+        genres.take(15).forEach { genre ->
+            val chip = Chip(requireContext()).apply {
+                text = genre.name
+                isCheckable = true
+                setTextColor(resources.getColorStateList(R.color.white, null))
+                setChipBackgroundColorResource(R.color.surface)
+                setChipStrokeColorResource(R.color.accent)
+                setChipStrokeWidth(2f)
+                setOnClickListener {
+                    viewModel.searchAnimeByGenre(genre.malId.toString())
+                }
+            }
+            binding.chipGroupGenres.addView(chip)
         }
     }
 

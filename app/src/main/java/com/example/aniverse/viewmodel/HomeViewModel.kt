@@ -20,8 +20,13 @@ class HomeViewModel(private val repository: AnimeRepository) : ViewModel() {
                 if (type == "seasonal") kotlinx.coroutines.delay(500)
                 
                 android.util.Log.d("HomeViewModel", "Fetching anime type: $type")
-                val response = if (type == "top") repository.getTopAnime()
-                else repository.getSeasonalAnime()
+                val response = when (type) {
+                    "top" -> repository.getTopAnime()
+                    "seasonal" -> repository.getSeasonalAnime()
+                    "upcoming" -> repository.getUpcomingAnime()
+                    "popular" -> repository.getTopAnime("bypopularity")
+                    else -> repository.getTopAnime()
+                }
                 
                 if (response != null && response.data != null) {
                     android.util.Log.d("HomeViewModel", "Response received for $type: ${response.data.size} items")

@@ -14,6 +14,8 @@ class ViewModelFactory(private val repository: AnimeRepository) : ViewModelProvi
             return FavoriteViewModel(repository) as T
         } else if (modelClass.isAssignableFrom(DetailViewModel::class.java)) {
             return DetailViewModel(repository) as T
+        } else if (modelClass.isAssignableFrom(ScheduleViewModel::class.java)) {
+            return ScheduleViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

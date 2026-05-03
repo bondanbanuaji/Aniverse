@@ -40,7 +40,20 @@ data class AnimeDetail(
 
 data class Images(val jpg: Jpg)
 data class Jpg(@SerializedName("image_url") val imageUrl: String, @SerializedName("large_image_url") val largeImageUrl: String?)
-data class Genre(val name: String)
+data class Genre(
+    @SerializedName("mal_id") val malId: Int,
+    val name: String
+)
+
+data class GenreResponse(
+    val data: List<GenreDetail>
+)
+
+data class GenreDetail(
+    @SerializedName("mal_id") val malId: Int,
+    val name: String,
+    val count: Int? = null
+)
 data class Producer(val name: String)
 data class Studio(val name: String)
 data class Trailer(@SerializedName("youtube_id") val youtubeId: String?, val url: String?, @SerializedName("embed_url") val embedUrl: String?)

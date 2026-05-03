@@ -18,9 +18,13 @@
             </gradient>
         </aapt:attr>
     </path>
-    <!-- Subtle premium pattern -->
+    <!-- Premium Geometric Pattern -->
     <path
-        android:pathData="M0,0L108,108M108,0L0,108"
-        android:strokeWidth="0.2"
-        android:strokeColor="#11FFFFFF" />
+        android:pathData="M0,20 L108,80 M0,80 L108,20"
+        android:strokeWidth="0.1"
+        android:strokeColor="#22FFFFFF" />
+    <path
+        android:pathData="M54,0 L54,108 M0,54 L108,54"
+        android:strokeWidth="0.1"
+        android:strokeColor="#22FFFFFF" />
 </vector>

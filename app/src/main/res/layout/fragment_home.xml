@@ -23,16 +23,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <!-- Placeholder Gradient Background -->
+                <!-- Welcome Banner Image -->
+                <ImageView
+                    android:id="@+id/ivBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/banner_gojo" />
+
+                <!-- Placeholder Gradient Background (Dibuat lebih transparan agar gambar Gojo terlihat) -->
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/banner_gradient" />
+                    android:background="@drawable/banner_gradient_v2"
+                    android:alpha="0.6" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
+                    android:gravity="bottom"
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -40,24 +49,31 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/welcome_title"
-                        android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textSize="28sp"
-                        android:textStyle="bold" />
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:shadowColor="#80000000"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="4" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:alpha="0.8"
+                        android:layout_marginTop="4dp"
+                        android:alpha="0.9"
                         android:text="@string/welcome_subtitle"
                         android:textColor="@color/white"
-                        android:textSize="14sp" />
+                        android:textSize="12sp"
+                        android:shadowColor="#80000000"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="2" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="12dp"
                         android:orientation="horizontal">
 
                         <com.google.android.material.button.MaterialButton
@@ -67,6 +83,7 @@
                             android:layout_marginEnd="8dp"
                             android:text="@string/btn_browse"
                             android:textAllCaps="false"
+                            android:textSize="12sp"
                             app:cornerRadius="20dp"
                             app:backgroundTint="@color/accent" />
 
@@ -78,6 +95,7 @@
                             android:text="@string/btn_schedule"
                             android:textAllCaps="false"
                             android:textColor="@color/white"
+                            android:textSize="12sp"
                             app:cornerRadius="20dp"
                             app:strokeColor="@color/white" />
                     </LinearLayout>
@@ -93,6 +111,7 @@
             android:layout_marginBottom="12dp">
 
             <TextView
+                android:id="@+id/tvSectionTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_trending"
@@ -101,10 +120,13 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/btnSeeAll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/bg_score_badge"
+                android:clickable="true"
+                android:focusable="true"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="4dp"
                 android:text="@string/label_see_all"
